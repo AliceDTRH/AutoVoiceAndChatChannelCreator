@@ -14,4 +14,4 @@ class MyClient(discord.Client):
             await message.channel.send('pong')
 
 client = MyClient()
-client.run('Njg3ODI5MjQyMzEzOTY1NjM4.Xmrc7Q.sokWwuD1BUhiq7Xa6uPphcX2lwY')
+client.run(os.environ['DISCORD_ACCESS_TOKEN'])
