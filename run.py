@@ -1,6 +1,5 @@
 from discord.ext import commands
 import os
-
 description = '''An example bot to showcase the discord.ext.commands extension
 module.
 There are a number of utility commands being showcased here.'''
@@ -29,5 +28,9 @@ async def on_voice_state_update(member, before, after):
         util = bot.get_cog('Util_Commands')
         await util.on_voice_state_update(member, before, after)
 
+async def close():
+    if bot.get_cog('Util_Commands'):
+        util = bot.get_cog('Util_Commands')
+        await util.close()
 
 bot.run(os.environ['DISCORD_ACCESS_TOKEN'])
